@@ -60,7 +60,16 @@
         }
 
         function func(m) {
-
+            if (index < lengthArray) {
+                index++;
+                console.log(index)
+                document.getElementById('question').innerHTML = ''
+                document.querySelector('#container ul').innerHTML = ''
+                showQ(index)
+            }
+            else {
+                document.getElementById('container').innerHTML = "Конец"
+            }
         }
 
     </script>
