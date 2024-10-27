@@ -16,14 +16,9 @@
     <h1>Пройдите тест по теме: "Программирование"</h1>
     <div id="container">
         <div id="question">
-            <p class="quest">Вопрос</p>
+
         </div>
-        <ul>
-            <li>В1</li>
-            <li>В2</li>
-            <li>В3</li>
-            <li>В4</li>
-        </ul>
+        <ul></ul>
     </div>
     <script>
         const questions = [{
@@ -48,6 +43,26 @@
             answers: ['C', 'Java', 'C++'],
             current: 1
         }]
+
+        //====================
+
+        let lengthArray = questions.length;
+        let index = 0;
+        showQ(index)
+
+        function showQ(n) {
+            document.getElementById('question').innerHTML = `
+            <p class="quest">${questions[n].question}</p>`
+            let qS = questions[n].answers
+            for (let i = 0; i < qS.length; i++)
+                document.querySelector('#container ul').innerHTML +=
+                    `<li onclick=func(${i})>${qS[i]}</li>`
+        }
+
+        function func(m) {
+
+        }
+
     </script>
     <script src="fn.js"></script>
 </body>
