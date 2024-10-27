@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="test.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <h1>Пройдите тест по теме: "Программирование"</h1>
+    <div id="container">
+        <div id="question">
+            <p class="quest">Вопрос</p>
+        </div>
+        <ul>
+            <li>В1</li>
+            <li>В2</li>
+            <li>В3</li>
+            <li>В4</li>
+        </ul>
+    </div>
+    <script>
+        const questions = [{
+            id: 1,
+            question: 'Какой самый популярный JavaScript фреймворк?',
+            answers: ['Angular', 'Vue', 'React', 'NextJS'],
+            current: 2
+        }, {
+            id: 2,
+            question: 'Кто такой Линус  Торвальдс?',
+            answers: ['Создатель Windows', 'Создатель FreeBSD', 'Создатель Linux'],
+            current: 2
+        }, {
+            id: 3,
+            question: 'Как называется надстройка над JavaScript со строгой типизацией?',
+            answers: ['TypeScript', 'NodeJS', 'Java'],
+            current: 0
+        },
+        {
+            id: 4,
+            question: "На чём основан JavaScript?",
+            answers: ['C', 'Java', 'C++'],
+            current: 1
+        }]
+    </script>
+    <script src="fn.js"></script>
+</body>
+
+</html>
