@@ -19,6 +19,9 @@
 
         </div>
         <ul></ul>
+
+        <!-- Здесь должен быть конец -->
+
     </div>
     <script>
         const questions = [{
@@ -48,6 +51,7 @@
 
         let lengthArray = questions.length;
         let index = 0;
+        let score = 0;
         showQ(index)
 
         function showQ(n) {
@@ -60,7 +64,10 @@
         }
 
         function func(m) {
+            if (m == questions[index].current)
+                score++;
             ++index;
+
             if (index < lengthArray) {
                 console.log(index)
                 document.getElementById('question').innerHTML = ''
@@ -68,7 +75,30 @@
                 showQ(index)
             }
             else {
-                document.getElementById('container').innerHTML = "Конец"
+                finish()
+            }
+        }
+        console.log(score)
+
+        function finish() {
+            document.getElementById('container').innerHTML = `<div id="result">
+                <p id = "theEnd" > Вы набрали: ${score} / ${questions.length} </p>
+                    <img id="js" src="https://www.datocms-assets.com/48401/1628644950-javascript.png?auto=format&fit=max&w=1200"
+                        alt="JavaScript">
+                        <p id="recommendations">Учись</p>
+                    </div>`
+        }
+
+        //n - кол-во правильных ответов, m - количество вопросов
+        function whoAreWho(n, m) {
+            let procent = n / m;
+            if (procent == 100)
+                `Вы гений! <br> Вы ответили на все вопросы`
+            else if (procent < 30) {
+                `К сожалению все печально. Учи материал`
+            }
+            else {
+                `В целом неплохо`
             }
         }
 

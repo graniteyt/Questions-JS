@@ -1,71 +1,77 @@
-#question p {
-    font-size: 26px;
-    font-family: 'Montserrat';
-    font-weight: 800;
-    text-align: center;
-}
-
-h1 {
-    font-size: 40px;
-    font-family: 'Montserrat';
-    font-weight: 800;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 40px;
-    transition: 0.5s ease-in-out;
-}
-
-h1:hover {
-    font-size: 42px;
+body {
+    font-family: 'JetBrains Mono';
+    font-weight: 500;
+    background-color: #f2f2f2;
 }
 
 #question {
     padding: 5px;
     margin: 0 auto;
-    background-color: rgb(216, 220, 220);
+    background-color: #ffffff;
     border-radius: 10px;
     width: fit-content;
-    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
-    transition: 0.5s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease-in-out;
     margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    animation: moveElement 1s linear;
 }
 
 #question:hover {
-    margin-bottom: 40px;
-    transform: translateY(-5px);
     cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
     scale: 1.05;
 }
 
 #container {
-    background-color: rgb(186, 186, 186);
+    background-color: #ffffff;
     border-radius: 5px;
     padding: 5px;
-    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.5);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 ul {
     padding: 5px;
+    list-style-type: none;
 }
 
 ul li {
-    list-style: none;
-    font-size: 20px;
-    font-family: 'Montserrat';
-    font-weight: 600;
-    padding: 10px;
-    margin-bottom: 30px;
-    background-color: aliceblue;
-    border-radius: 10px;
-    height: 80px;
-    transition: 0.2s ease-in-out;
+    background-color: #ffffff;
+    color: #000000;
+    transition: 0.2s ease-out;
+    animation: moveElement 1s linear;
 }
 
 ul li:hover {
-    margin-bottom: 50px;
-    cursor: pointer;
-    transform: translateY(-5px);
+    color: #ffffff;
+    background-color: #000000;
+}
+
+#theEnd,
+#recommendations {
+    font-weight: 600;
+    color: #000000;
+    text-align: center;
+    font-size: 1.875rem;
+    transition: 0.3s all ease;
+}
+
+#theEnd:hover,
+#recommendations:hover {
+    color: #000000;
     background-color: #ffffff;
-    scale: 1.01;
-    border: 1px solid black;
+}
+
+#js {
+    display: block;
+    margin: 0 auto;
+    transition: 0.3s all ease;
+    border-radius: 10px;
+}
+
+#js:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 }
