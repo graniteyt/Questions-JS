@@ -4,10 +4,19 @@ body {
     background-color: #f2f2f2;
 }
 
+h1 {
+    transition: 0.3s ease-in-out;
+}
+
+h1:hover {
+    color: #ffffff;
+    background-color: #000000;
+}
+
 #question {
     padding: 5px;
     margin: 0 auto;
-    background-color: #ffffff;
+    background-color: #f0f0f0;
     border-radius: 10px;
     width: fit-content;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
@@ -15,19 +24,19 @@ body {
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
-    animation: moveElement 1s linear;
 }
 
 #question:hover {
     cursor: pointer;
-    transform: translateY(-5px);
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.8);
     scale: 1.05;
+    color: #ffffff;
+    background-color: #000000;
 }
 
 #container {
     background-color: #ffffff;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 5px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -60,8 +69,8 @@ ul li:hover {
 
 #theEnd:hover,
 #recommendations:hover {
-    color: #000000;
-    background-color: #ffffff;
+    color: #ffffff;
+    background-color: #000000;
 }
 
 #js {

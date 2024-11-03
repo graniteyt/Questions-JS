@@ -85,20 +85,20 @@
                 <p id = "theEnd" > Вы набрали: ${score} / ${questions.length} </p>
                     <img id="js" src="https://www.datocms-assets.com/48401/1628644950-javascript.png?auto=format&fit=max&w=1200"
                         alt="JavaScript">
-                        <p id="recommendations">Учись</p>
+                        <p id="recommendations">${whoAreWho(score, questions.length)}</p>
                     </div>`
         }
 
         //n - кол-во правильных ответов, m - количество вопросов
         function whoAreWho(n, m) {
             let procent = n / m;
-            if (procent == 100)
-                `Вы гений! <br> Вы ответили на все вопросы`
-            else if (procent < 30) {
-                `К сожалению все печально. Учи материал`
+            if (procent == 1)
+                return `Вы гений! <br> Вы ответили на все вопросы`
+            else if (procent < 0.34) {
+                return `К сожалению все печально. Учи материал`
             }
             else {
-                `В целом неплохо`
+                return `В целом неплохо`
             }
         }
 
