@@ -90,8 +90,13 @@ if (document.querySelector('form')) {
     const current = document.getElementById('current')
     const addQuestion = document.getElementById('addQuestion')
     let i = 3;
-    if (selfMadeQuestion.value != '' && current.value != '')
-        addQuestion.onclick = function () {
+
+    addAnswer.onclick = function () {
+        let createInput = document.createElement('input')
+    }
+
+    addQuestion.onclick = function () {
+        if (selfMadeQuestion.value != '' && current.value != '') {
             const newObject = {}
             newObject.question = selfMadeQuestion.value;
             newObject.current = current.value - 1;
@@ -101,4 +106,5 @@ if (document.querySelector('form')) {
 
             console.log(questions)
         }
+    }
 }
