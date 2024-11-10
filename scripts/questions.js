@@ -1,5 +1,5 @@
-// тут лежат вопросы
-const questions = [{
+// тут лежат вопросы / questions
+let questions = [{
     id: 1,
     question: 'Какой самый популярный JavaScript фреймворк?',
     answers: ['Angular', 'Vue', 'React', 'NextJS'],
@@ -22,15 +22,24 @@ const questions = [{
     current: 1
 }]
 
-// тут лежат переменные
-let lengthArray = questions.length;
-let index = 0;
-let score = 0;
-if (document.getElementById('container'))
+// localStorage.setItem('key', JSON.stringify(questions));
+// console.log(localStorage.getItem('key'))
+
+
+
+// тут лежат переменные / variables
+let lengthArray, index = 0, score = 0;
+
+
+if (document.getElementById('container')) {
+    localStorage.getItem('key', JSON.stringify(questions));
+    questions = JSON.parse(localStorage.getItem('key'));
+    // console.log(questionsFromStorage);
+    lengthArray = questions.length;
     showQ(index)
+}
 
-
-// тут функция показа вопроса (наверное)
+// тут функция показа вопроса (наверное) / show question function
 function showQ(n) {
     document.getElementById('question').innerHTML = `
             <p class="quest">${questions[n].question}</p>`
@@ -89,21 +98,40 @@ if (document.querySelector('form')) {
     const addAnswer = document.getElementById('addAnswer')
     const current = document.getElementById('current')
     const addQuestion = document.getElementById('addQuestion')
-    let i = 3;
+    let i = 3, nAnswer = 1;
 
     addAnswer.onclick = function () {
-        let createInput = document.createElement('input')
+        if (nAnswer < 5) {
+            let createInput = document.createElement('input')
+            createInput.placeholder = 'Введите вариант ответа'
+            variant.append(createInput)
+            nAnswer++;
+            if (nAnswer === 5) {
+                addAnswer.remove();
+            }
+        }
     }
 
     addQuestion.onclick = function () {
+        let plusedAnswers = document.querySelectorAll('fieldset input')
+        console.log(plusedAnswers)
+
+        const an = [];
+
+        for (let i = 0; i < plusedAnswers.length; i++) {
+            if (plusedAnswers[i].value != '')
+                an[i] = plusedAnswers[i].value
+        }
+
+
         if (selfMadeQuestion.value != '' && current.value != '') {
             const newObject = {}
             newObject.question = selfMadeQuestion.value;
+            newObject.answers = an;
             newObject.current = current.value - 1;
             newObject.id = i++;
-
             questions.push(newObject)
-
+            localStorage.setItem('key', JSON.stringify(questions));
             console.log(questions)
         }
     }
