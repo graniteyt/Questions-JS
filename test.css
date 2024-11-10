@@ -1,6 +1,9 @@
-body {
+* {
+    font-weight: 600;
     font-family: 'JetBrains Mono';
-    font-weight: 500;
+}
+
+body {
     background-color: #f2f2f2;
 }
 
@@ -110,6 +113,10 @@ form {
     border-radius: 10px;
 }
 
+textarea {
+    padding: 10px;
+}
+
 form label {
     font-size: 2rem;
 }
@@ -140,5 +147,5 @@ input {
 
 fieldset {
     text-align: center;
-    margin-bottom: 20px;
+    border: none;
 }
