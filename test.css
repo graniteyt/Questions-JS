@@ -111,6 +111,7 @@ form {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     padding: 10px;
     border-radius: 10px;
+    transition: 500ms all ease;
 }
 
 textarea {
@@ -148,4 +149,5 @@ input {
 fieldset {
     text-align: center;
     border: none;
+    transition: 1s all ease-in-out;
 }
